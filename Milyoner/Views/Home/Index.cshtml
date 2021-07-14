@@ -1,0 +1,55 @@
+﻿@model Milyoner.Models.AddQuestionModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        input[type=text], textarea {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Welcome</h1>
+        <h2>Thank you for your help to improve our game !</h2>
+
+        <form asp-controller="Home" asp-action="CreateQuestion">
+            <label>Sualınız</label><br />
+            <textarea asp-for="QuestionHeader"></textarea><br />
+
+            <label> A variantı</label><br />
+            <input asp-for="AnswerA"><br />
+
+            <label> B variantı</label><br />
+            <input asp-for="AnswerB"><br />
+
+            <label>C variantı</label><br />
+            <input asp-for="AnswerC"><br />
+
+            <label>D variantı </label><br />
+            <input asp-for="AnswerD"><br />
+
+            <input asp-for="TrueAnswer" type="radio" value=1>
+            <label>A</label><br>
+            <input asp-for="TrueAnswer"  type="radio" value=2>
+            <label>B</label><br>
+            <input asp-for="TrueAnswer"  type="radio" value=3>
+            <label >C</label><br>
+            <input asp-for="TrueAnswer"  type="radio" value=4>
+            <label>D</label>
+            <center><input type="submit" /></center>
+        </form>
+    </center>
+</body>
+</html>
